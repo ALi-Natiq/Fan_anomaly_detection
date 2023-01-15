@@ -138,19 +138,19 @@ void loop()
     ei_printf(": \n");
     for (size_t ix = 0; ix < EI_CLASSIFIER_LABEL_COUNT; ix++) {
         ei_printf("    %s: %.5f\n", result.classification[ix].label, result.classification[ix].value);
-            if(strcmp(result.classification[ix].label, "distorted") == 0) {
-        if(result.classification[ix].value > 0.81) {
+            if(strcmp(result.classification[ix].label, "distorted") == 0) { // Rood led voor distorted
+        if(result.classification[ix].value > 0.81) { 
             digitalWrite(redPin, HIGH);
         } else {
             digitalWrite(redPin, LOW);
         }
-    } else if(strcmp(result.classification[ix].label, "off") == 0) {
+    } else if(strcmp(result.classification[ix].label, "off") == 0) { // Gele led voor off
         if(result.classification[ix].value > 0.81) {
             digitalWrite(yellowPin, HIGH);
         } else {
             digitalWrite(yellowPin, LOW);
         }
-    } else if(strcmp(result.classification[ix].label, "on") == 0) {
+    } else if(strcmp(result.classification[ix].label, "on") == 0) { // Blauwe led voor on
         if(result.classification[ix].value > 0.81) {
             digitalWrite(bluePin, HIGH);
         } else {

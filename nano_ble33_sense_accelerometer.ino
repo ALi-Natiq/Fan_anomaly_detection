@@ -24,6 +24,7 @@
 const int redPin = 2;
 const int yellowPin = 6;
 const int bluePin = 12;
+
 /*
  ** NOTE: If you run into TFLite arena allocation issue.
  **
